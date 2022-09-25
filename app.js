@@ -28,6 +28,9 @@ app.post("/forms", (req, res) => {
     `SELECT * FROM form WHERE phone = '${req.body.phone}'`,
     (phoneErr, phoneResult) => {
       if (phoneResult.length > 0) {
+        if (req.body.degree == null) {
+          req.body.degree = 0;
+        }
         connection.query(
           `UPDATE form SET ? WHERE phone = '${req.body.phone}'`,
           req.body,
