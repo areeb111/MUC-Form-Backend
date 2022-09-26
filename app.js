@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.get("/", (req, res) => {
   res.send({
-    title: "DUC Chat System",
+    title: "MUC Form Backend",
     version: "1.0.0",
   });
 });
